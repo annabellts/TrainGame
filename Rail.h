@@ -1,9 +1,11 @@
 #ifndef RAIL_H
 #define RAIL_H
 
+#include<memory>
 #include "IGameObj.h"
+#include"Station.h"
 
-class Rail: IGameObj
+class Rail: public IGameObj
 {
 private:
 	bool m_isNorthRail;
@@ -11,13 +13,12 @@ private:
 	bool m_isSouthRail;
 	bool m_isWestRail;
 	char m_drawChar{ '#' };
+	std::shared_ptr<Station> m_station;
 
 public:
-	~Rail()
-	{
-	}
+	~Rail() {};
 	Rail();
-	Rail(bool isNorthRail, bool isEastRail, bool isSouthRail, bool isWestRail);
+	Rail(bool isNorthRail, bool isEastRail, bool isSouthRail, bool isWestRail, std::shared_ptr<Station);
 	bool getIsNorthRail() { return m_isNorthRail; };
 	bool getIsEastRail() { return m_isEastRail; };
 	bool getIsSouthRail() { return m_isSouthRail; };

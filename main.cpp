@@ -7,9 +7,9 @@
 
 int main()
 {
-    GameController* game{ new GameController };
-    game->ViewBoard();
-    delete game;
+    GameController game("gameMap.txt");
+    game.CreateGame();
+    game.ViewBoard();
 }
 
 // Programm ausführen: STRG+F5 oder Menüeintrag "Debuggen" > "Starten ohne Debuggen starten"

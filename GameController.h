@@ -1,18 +1,25 @@
 #ifndef GAMECONTROLLER_H
 #define GAMECONTROLLER_H
 
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <sstream>
 #include"Board.h"
 #include"View.h"
 
 class GameController
 {
 private:
-	Board *m_board;
-	View *m_view;
+	std::shared_ptr<Board> m_board;
+	std::shared_ptr<View> m_view;
+	std::vector<std::string> m_gameMap;
 
 public:
-	~GameController() {};
-	GameController();
+	~GameController() { };
+	GameController(std::string file);
+	void CreateGame();
 	void ViewBoard();
+	std::vector<std::string> ReadGameMapFromFile(std::string file);
 };
 #endif 

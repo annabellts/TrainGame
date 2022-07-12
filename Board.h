@@ -3,6 +3,7 @@
 
 #include <memory>
 #include<vector>
+#include<string>
 #include "Rail.h"
 
 class Board {
@@ -17,7 +18,7 @@ private:
 
 public:
 	~Board() {};
-	Board();
+	Board(std::vector<std::string> gameMap);
 
 	int getBoardHeight() { return m_cBoardHeight; }
 	int getBoardWidth() { return m_cBoardWidth; }

@@ -21,6 +21,7 @@ void View::printBoard()
 
 			std::cout << (*(*m_board).getGameBoard()[row * (*m_board).getBoardWidth() + clm]).draw();
 		}
+		std::cout << std::endl;
 	}
 	std::cout << std::endl;
 }

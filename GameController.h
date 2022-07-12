@@ -13,6 +13,6 @@ private:
 public:
 	~GameController() {};
 	GameController();
-	//startGame();
+	void ViewBoard();
 };
 #endif 

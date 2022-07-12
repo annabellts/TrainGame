@@ -73,5 +73,8 @@
     <Text Include="gameMap.txt">
       <Filter>Ressourcendateien</Filter>
     </Text>
+    <Text Include="stationNames.txt">
+      <Filter>Ressourcendateien</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -36,6 +36,9 @@ Board::Board(std::vector<std::string> gameMap)
                 if (gameMap[i][j] == '#') {
                     m_gameBoard[i * m_cBoardWidth + j] = (std::shared_ptr<IGameObj>) new Rail(isNorthRail, isEastRail, isSouthRail, isWestRail, nullptr);
                 }
+                else {
+                    m_gameBoard[i * m_cBoardWidth + j] = (std::shared_ptr<IGameObj>) new Rail(isNorthRail, isEastRail, isSouthRail, isWestRail, std::shared_ptr<Station>(new Station(gameMap[i][j])));
+                }
             }
         }
     }

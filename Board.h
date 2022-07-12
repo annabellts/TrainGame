@@ -8,10 +8,11 @@
 
 class Board {
 private:
-	const int m_cBoardHeight{ 20 };
-	const int m_cBoardWidth{ 20 };
+	const int m_cBoardHeight{ 18 };
+	const int m_cBoardWidth{ 21 };
 
 	std::vector<std::shared_ptr<IGameObj>> m_gameBoard{ m_cBoardHeight * m_cBoardWidth};
+	std::vector<std::shared_ptr<Station>> m_stationList;
 	//std::shared_ptr<Train> m_train;
 	//std::vector<int> m_trainCoordinates;
 	//std::vector<int> m_stationsLeftToVisit;

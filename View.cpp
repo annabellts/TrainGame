@@ -20,7 +20,6 @@ void View::printBoard()
 		for (int clm = 0; clm < m_board->getBoardWidth(); ++clm) {
 
 			if (m_board->getGameBoard()[row * m_board->getBoardWidth() + clm]) {
-
 				std::cout << (m_board->getGameBoard()[row * m_board->getBoardWidth() + clm])->draw();
 			}
 			else {

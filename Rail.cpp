@@ -10,5 +10,8 @@ Rail::Rail(bool isNorthRail, bool isEastRail, bool isSouthRail, bool isWestRail,
     m_isSouthRail = isSouthRail;
     m_isWestRail = isWestRail;
     m_station = station;
+    if (station){
+        m_drawChar = station->draw();
+    }
 }
 

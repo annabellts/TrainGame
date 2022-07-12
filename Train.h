@@ -4,14 +4,14 @@
 #include "IGameObj.h"
 
 
-class Train : public IGameObj
+class Train
 {
 	private:
-		char m_drawChar{ 'T' };
+		char m_drawChar{ '+' };
 
 	public:
 		~Train() {};
-		Train();
+		Train() {};
 
 		char draw() { return m_drawChar; };
 

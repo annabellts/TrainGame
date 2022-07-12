@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include<conio.h>
 #include"Board.h"
 #include"View.h"
 
@@ -19,7 +20,8 @@ public:
 	~GameController() { };
 	GameController(std::string file);
 	void CreateGame();
-	void ViewBoard();
+	void PlayGame();
+	char getMove();
 	std::vector<std::string> ReadGameMapFromFile(std::string file);
 };
 #endif 

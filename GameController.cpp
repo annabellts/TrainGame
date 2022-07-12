@@ -9,14 +9,24 @@ void GameController::CreateGame()
 {
 	m_board = std::shared_ptr<Board>(new Board(m_gameMap));
 	m_view = std::shared_ptr<View>(new View(m_board));
-}
-
-
-
-void GameController::ViewBoard()
-{
 	m_view->printBoard();
 }
+
+void GameController::PlayGame()
+{
+	std::cout << "Enter Move (wasd):";
+	char move{ getMove() };
+	m_board->moveTrain(move);
+	m_view->printBoard();
+}
+
+char GameController::getMove()
+{
+		char input = _getch();
+		return input;
+
+}
+
 
 std::vector<std::string> GameController::ReadGameMapFromFile(std::string file)
 {

@@ -9,7 +9,7 @@ int main()
 {
     GameController game("gameMap.txt");
     game.CreateGame();
-    game.ViewBoard();
+    game.PlayGame();
 }
 
 // Programm ausführen: STRG+F5 oder Menüeintrag "Debuggen" > "Starten ohne Debuggen starten"

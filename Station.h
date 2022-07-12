@@ -4,7 +4,7 @@
 
 #include<string>
 #include "IGameObj.h"
-class Station : public IGameObj
+class Station 
 {
 private:
 	std::string m_stationName;

@@ -2,7 +2,10 @@
 #define VIEW_H
 
 #include<memory>
+#include<vector>
+#include<iostream>
 #include "Board.h"
+
 
 class View
 {
@@ -13,5 +16,6 @@ public:
 	View();
 	View(std::shared_ptr<Board> board);
 	void printBoard();
+	void printMoves(std::vector<bool>);
 };
 #endif

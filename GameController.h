@@ -9,6 +9,8 @@
 #include"Board.h"
 #include"View.h"
 
+//Controller to handle game flow
+
 class GameController
 {
 private:

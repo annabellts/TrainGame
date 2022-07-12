@@ -9,6 +9,7 @@ View::View(std::shared_ptr<Board> board) {
 	m_board = board; 
 }
 
+//prints board, uses each objects draw function to get assoziated char
 void View::printBoard()
 {
 
@@ -36,7 +37,4 @@ void View::printBoard()
 	std::cout << std::endl;
 }
 
-void View::printMoves(std::vector<bool> possibleMoves)
-{
-	std::cout << "North: " << possibleMoves[0] << "East: " << possibleMoves[1] << "South: " << possibleMoves[2] << "West: " << possibleMoves[3];
-}
+

@@ -1,6 +1,7 @@
 #ifndef IGAMEOBJ_H
 #define IGAMEOBJ_H
 
+//Interface for every game object. Currently only Rail, for possible future extensions
 class IGameObj
 {
 

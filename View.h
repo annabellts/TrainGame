@@ -6,7 +6,7 @@
 #include<iostream>
 #include "Board.h"
 
-
+// handles print of board
 class View
 {
 private:
@@ -16,6 +16,5 @@ public:
 	View();
 	View(std::shared_ptr<Board> board);
 	void printBoard();
-	void printMoves(std::vector<bool>);
 };
 #endif

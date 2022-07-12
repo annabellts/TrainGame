@@ -22,6 +22,15 @@
     <Filter Include="Quelldateien\View">
       <UniqueIdentifier>{299c7158-2100-4394-b437-9544de03e331}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\Controller">
+      <UniqueIdentifier>{56ce82db-6f27-41b9-977f-93c223fd2bce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\View">
+      <UniqueIdentifier>{3e093f22-9c31-4edb-9ab6-3ae8d43e1f69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Modell">
+      <UniqueIdentifier>{b5141129-526b-4ca0-80d3-c1cf72b07632}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -47,26 +56,26 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Board.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="IGameObj.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Rail.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="GameController.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\Controller</Filter>
     </ClInclude>
     <ClInclude Include="View.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\View</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameObj.h">
+      <Filter>Headerdateien\Modell</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>Headerdateien\Modell</Filter>
     </ClInclude>
     <ClInclude Include="Train.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\Modell</Filter>
+    </ClInclude>
+    <ClInclude Include="Rail.h">
+      <Filter>Headerdateien\Modell</Filter>
     </ClInclude>
     <ClInclude Include="Station.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Headerdateien\Modell</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

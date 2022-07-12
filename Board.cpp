@@ -1,5 +1,8 @@
 #include "Board.h"
 
+//creates the board according to gameMap
+//adds trainstation to rail if provided
+//checks adjacent rails, where train can move to
 Board::Board(std::vector<std::string> gameMap)
 {
     bool isFirst{ true };
@@ -55,7 +58,7 @@ Board::Board(std::vector<std::string> gameMap)
 
 }
 
-
+//moves the train along the rail grid
 void Board::moveTrain( char move)
 {
     std::vector<int> currentTrainPosition{ getTrainCoordinates() };

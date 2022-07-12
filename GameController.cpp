@@ -1,10 +1,12 @@
 #include "GameController.h"
 
+//read the game map from provided file and initialize controller
 GameController::GameController(std::string file)
 {
 	m_gameMap = ReadGameMapFromFile(file);
 }
 
+//create new board based on game Map and initialize View
 void GameController::CreateGame()
 {
 	m_board = std::shared_ptr<Board>(new Board(m_gameMap));
@@ -12,6 +14,7 @@ void GameController::CreateGame()
 	m_view->printBoard();
 }
 
+// Main Game flow
 void GameController::PlayGame()
 {
 	std::cout << "Enter Move (wasd):";
@@ -20,6 +23,7 @@ void GameController::PlayGame()
 	m_view->printBoard();
 }
 
+//reads single character from keyboard to get next move
 char GameController::getMove()
 {
 		char input = _getch();
@@ -27,7 +31,7 @@ char GameController::getMove()
 
 }
 
-
+//translates files to game map
 std::vector<std::string> GameController::ReadGameMapFromFile(std::string file)
 {
 	std::ifstream read(file);

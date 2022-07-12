@@ -8,6 +8,8 @@
 #include "Rail.h"
 #include"Train.h"
 
+// game board class, consists of rails objetcts (with stations) and one train object
+//train can move around the board on rails
 class Board {
 private:
 	const int m_cBoardHeight{ 18 };

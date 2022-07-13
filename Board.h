@@ -1,12 +1,13 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <memory>
-#include<vector>
-#include<string>
-#include<iostream>
+
 #include "Rail.h"
-#include"Train.h"
+#include "Train.h"
+
+#include <memory>
+#include <vector>
+#include <string>
 
 // game board class, consists of rails objetcts (with stations) and one train object
 //train can move around the board on rails

@@ -1,9 +1,6 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include<memory>
-#include<vector>
-#include<iostream>
 #include "Board.h"
 
 // handles print of board

@@ -1,7 +1,9 @@
-#include <iostream>
-
 #include "View.h"
-#include"Board.h"
+#include "Board.h"
+
+#include <iostream>
+#include <memory>
+#include <vector>
 
 View::View() : m_board(nullptr) {}
 

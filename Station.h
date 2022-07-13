@@ -1,8 +1,9 @@
 #ifndef STATION_H
 #define STATION_H
 
-#include<string>
 #include "IGameObj.h"
+
+#include <string>
 
 //station with stationID (display symbol) and name
 class Station 

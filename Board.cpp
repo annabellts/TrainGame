@@ -1,5 +1,7 @@
 #include "Board.h"
 
+#include <iostream>
+
 //creates the board according to gameMap
 //adds trainstation to rail if provided
 //checks adjacent rails, where train can move to

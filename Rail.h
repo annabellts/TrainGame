@@ -1,9 +1,12 @@
 #ifndef RAIL_H
 #define RAIL_H
 
-#include<memory>
+
 #include "IGameObj.h"
-#include"Station.h"
+#include "Station.h"
+
+#include <memory>
+
 
 class Rail: public IGameObj
 {

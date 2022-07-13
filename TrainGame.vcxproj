@@ -156,8 +156,8 @@
     <ClInclude Include="View.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="gameMap.txt" />
-    <Text Include="stationNames.txt" />
+    <Text Include="GermanyMap.txt" />
+    <Text Include="LocalMap.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

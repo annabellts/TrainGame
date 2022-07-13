@@ -1,0 +1,30 @@
+               #####A
+               B     
+          ######     
+        ##C          
+        # ######     
+        #      #     
+ D######E###   F     
+           #   #     
+           #   #     
+           #   G     
+           H####     
+         ###   #I##  
+        ##        #  
+       ##         #  
+       J          #  
+                  #  
+                  #  
+                  K  
+-
+A Neubrück
+B Ersehof
+C Wense
+D Meerdorf
+E Rüper
+F Harvesse
+G Sternico
+H Zweidorf
+I Wendezell
+J Sophienthal
+K Stuttgart

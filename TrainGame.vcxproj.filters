@@ -76,10 +76,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="gameMap.txt">
+    <Text Include="GermanyMap.txt">
       <Filter>Ressourcendateien</Filter>
     </Text>
-    <Text Include="stationNames.txt">
+    <Text Include="LocalMap.txt">
       <Filter>Ressourcendateien</Filter>
     </Text>
   </ItemGroup>

@@ -10,12 +10,11 @@
 
 GameController::GameController(std::string file)
 {
-	m_gameMap = ReadGameMapFromFile(file);
-	m_board = std::shared_ptr<Board>(new Board(m_gameMap, m_stationNames));
+	std::pair<std::vector<std::string>, std::vector<std::string>> gameMapInfo {ReadGameMapFromFile(file)};
+	m_board = std::shared_ptr<Board>(new Board(gameMapInfo.first, gameMapInfo.second));
 	m_view = std::shared_ptr<View>(new View(m_board));
 	m_view->printBoard();
 }
-
 
 // Main Game flow
 void GameController::PlayGame()
@@ -51,29 +50,29 @@ char GameController::getMove()
 			input = _getch();
 		}
 	}
-
 	return input;
-
 }
 
 //translates files to game map
-std::vector<std::string> GameController::ReadGameMapFromFile(std::string file)
+std::pair<std::vector<std::string>, std::vector<std::string>> GameController::ReadGameMapFromFile(std::string file)
 {
-	std::ifstream str(file);
-	if (!str)
+	std::vector<std::string> gameMap;
+	std::vector<std::string> stationNames;
+	std::ifstream fileStream(file);
+	if (!fileStream)
 	{
 		// Print an error and exit
 		std::cerr << "File could not be opened.\n";
 	}
 	std::string line;
-	while (str && line != "-") {
-		std::getline(str, line);
-		m_gameMap.push_back(line);
+	std::getline(fileStream, line);
+	while (fileStream && line != "-") {
+		gameMap.push_back(line);
+		std::getline(fileStream, line);
 	}
-	while (str) {			
-		std::getline(str, line);
-		m_stationNames.push_back(line);
+	while (fileStream) {			
+		std::getline(fileStream, line);
+		stationNames.push_back(line);
 	}
-
-	return std::vector<std::string>(m_gameMap);
+	return std::make_pair(gameMap,stationNames);
 }

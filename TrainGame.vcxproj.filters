@@ -45,9 +45,6 @@
     <ClCompile Include="GameController.cpp">
       <Filter>Quelldateien\Controller</Filter>
     </ClCompile>
-    <ClCompile Include="Train.cpp">
-      <Filter>Quelldateien\Modell</Filter>
-    </ClCompile>
     <ClCompile Include="Station.cpp">
       <Filter>Quelldateien\Modell</Filter>
     </ClCompile>

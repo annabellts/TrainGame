@@ -11,7 +11,6 @@ private:
 	char m_stationID;
 public:
 	~Station() {};
-	Station(char number);
 	Station(char number, std::string name);
 	char draw() { return m_stationID; };
 	std::string getStationName() { return m_stationName; };

@@ -1,8 +1,5 @@
 #include "Rail.h"
 
-//creates Rail with unknown parameters
-Rail::Rail() : m_isNorthRail(false), m_isEastRail(false), m_isSouthRail(false), m_isWestRail(false), m_station(nullptr) {}
-
 //creates rail with info of neighboring rails and adds station if desired
 Rail::Rail(bool isNorthRail, bool isEastRail, bool isSouthRail, bool isWestRail, std::shared_ptr<Station> station)
 {
@@ -15,4 +12,3 @@ Rail::Rail(bool isNorthRail, bool isEastRail, bool isSouthRail, bool isWestRail,
         m_drawChar = station->draw();
     }
 }
-

@@ -20,7 +20,6 @@ private:
 
 public:
 	~Rail() {};
-	Rail();
 	Rail(bool isNorthRail, bool isEastRail, bool isSouthRail, bool isWestRail, std::shared_ptr<Station>);
 	bool getIsNorthRail() { return m_isNorthRail; };
 	bool getIsEastRail() { return m_isEastRail; };

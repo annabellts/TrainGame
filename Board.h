@@ -20,7 +20,6 @@ private:
 	std::vector<std::shared_ptr<Station>> m_stationList;
 	std::shared_ptr<Train> m_train;
 	std::vector<int> m_trainCoordinates;
-	//std::vector<int> m_stationsLeftToVisit;
 
 public:
 	~Board() {};
@@ -31,6 +30,7 @@ public:
 	std::vector<int> getTrainCoordinates() { return m_trainCoordinates; }
 	std::shared_ptr<Train> getTrain() { return m_train; }
 	std::vector<std::shared_ptr<IGameObj>> getGameBoard() { return m_gameBoard; }
+
 	void moveTrain(char move);
 };
 

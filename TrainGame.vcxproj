@@ -144,7 +144,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rail.cpp" />
     <ClCompile Include="Station.cpp" />
-    <ClCompile Include="Train.cpp" />
     <ClCompile Include="View.cpp" />
   </ItemGroup>
   <ItemGroup>

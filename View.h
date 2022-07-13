@@ -10,7 +10,6 @@ private:
 	std::shared_ptr<Board> m_board;
 public:
 	~View() {};
-	View();
 	View(std::shared_ptr<Board> board);
 	void printBoard();
 };

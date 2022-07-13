@@ -5,8 +5,6 @@
 #include <memory>
 #include <vector>
 
-View::View() : m_board(nullptr) {}
-
 View::View(std::shared_ptr<Board> board) {
 	m_board = board; 
 }
@@ -14,7 +12,6 @@ View::View(std::shared_ptr<Board> board) {
 //prints board, uses each objects draw function to get assoziated char
 void View::printBoard()
 {
-
 	std::cout << std::endl;
 	std::vector<int> trainCoordinates{ m_board->getTrainCoordinates()};
 
@@ -38,5 +35,3 @@ void View::printBoard()
 	}
 	std::cout << std::endl;
 }
-
-

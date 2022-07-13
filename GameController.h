@@ -14,10 +14,8 @@ class GameController
 private:
 	std::shared_ptr<Board> m_board;
 	std::shared_ptr<View> m_view;
-	std::vector<std::string> m_gameMap;
-	std::vector<std::string> m_stationNames;
 
-	std::vector<std::string> ReadGameMapFromFile(std::string file);
+	std::pair<std::vector<std::string>, std::vector<std::string>> ReadGameMapFromFile(std::string file);
 	char getMove();
 
 public:

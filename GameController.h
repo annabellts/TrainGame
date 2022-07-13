@@ -16,11 +16,12 @@ private:
 	std::shared_ptr<View> m_view;
 	std::vector<std::string> m_gameMap;
 
+	std::vector<std::string> ReadGameMapFromFile(std::string file);
+	char getMove();
+
 public:
 	~GameController() { };
 	GameController(std::string file);
 	void PlayGame();
-	char getMove();
-	std::vector<std::string> ReadGameMapFromFile(std::string file);
 };
 #endif 

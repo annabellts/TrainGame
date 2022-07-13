@@ -27,6 +27,7 @@ void GameController::PlayGame()
 			return;
 		}
 		m_board->moveTrain(move);
+		system("cls");
 		m_view->printBoard();
 	}
 }

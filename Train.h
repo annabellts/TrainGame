@@ -1,19 +1,20 @@
 #ifndef TRAIN_H
 #define TRAIN_H
 
-#include "IGameObj.h"
-
-
 class Train
 {
 	private:
 		char m_drawChar{ '+' };
+		char m_orientation;
 
 	public:
 		~Train() {};
-		Train() {};
+		Train();
 
 		char draw() { return m_drawChar; };
+		char getOrientation() { return m_orientation; };
+
+		void setOrientation(char direction) { m_orientation = direction; };
 
 };
 

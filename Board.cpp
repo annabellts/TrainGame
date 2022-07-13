@@ -60,40 +60,61 @@ Board::Board(std::vector<std::string> gameMap)
 
 }
 
-//moves the train along the rail grid
+//moves the train along the rail grid, only stops at intersections or stations, can only turn back on stations
 void Board::moveTrain( char move)
 {
     std::vector<int> currentTrainPosition{ getTrainCoordinates() };
+    char currentTrainOrientation{ getTrain()->getOrientation() };
     std::shared_ptr < IGameObj> currentPositionObj{ getGameBoard()[currentTrainPosition.at(0) * m_cBoardWidth + currentTrainPosition.at(1)] };
 
     switch (move) {
     case 'w':
-        if (currentPositionObj->getIsNorthRail() && m_trainCoordinates[0] > 0) {
-            m_trainCoordinates[0] -= 1;
+        if (currentPositionObj->getIsNorthRail() && (currentPositionObj->getStation() || currentTrainOrientation != 's')) {
+            getTrain()->setOrientation('n');
+            do  {
+                m_trainCoordinates[0] -= 1;
+                currentTrainPosition = getTrainCoordinates() ;
+                currentPositionObj = getGameBoard()[currentTrainPosition.at(0) * m_cBoardWidth + currentTrainPosition.at(1)] ;
+            } while (currentPositionObj->getIsNorthRail() && !currentPositionObj->getIsWestRail() && !currentPositionObj->getIsEastRail() && currentPositionObj->getStation()==nullptr);
         }
         else {
             std::cerr << "Please enter a valid move";
         }
         break;
     case 'a':
-        if (currentPositionObj->getIsWestRail() && m_trainCoordinates[1] > 0) {
-            m_trainCoordinates[1] -= 1;
+        if (currentPositionObj->getIsWestRail() && (currentPositionObj->getStation() || currentTrainOrientation != 'e')) {
+            getTrain()->setOrientation('w');
+            do {
+                m_trainCoordinates[1] -= 1;
+                currentTrainPosition = getTrainCoordinates();
+                currentPositionObj = getGameBoard()[currentTrainPosition.at(0) * m_cBoardWidth + currentTrainPosition.at(1)];
+            } while (currentPositionObj->getIsWestRail() && !currentPositionObj->getIsNorthRail() && !currentPositionObj->getIsSouthRail() && currentPositionObj->getStation() == nullptr);
         }
         else {
             std::cerr << "Please enter a valid move";
         }
         break;
     case 's':
-        if (currentPositionObj->getIsSouthRail() && m_trainCoordinates[0] < m_cBoardHeight - 1) {
-            m_trainCoordinates[0] += 1;
+        if (currentPositionObj->getIsSouthRail() && (currentPositionObj->getStation() || currentTrainOrientation != 'n')) {
+            getTrain()->setOrientation('s');
+            do {
+                m_trainCoordinates[0] += 1;
+                currentTrainPosition = getTrainCoordinates();
+                currentPositionObj = getGameBoard()[currentTrainPosition.at(0) * m_cBoardWidth + currentTrainPosition.at(1)];
+            } while (currentPositionObj->getIsSouthRail() && !currentPositionObj->getIsWestRail() && !currentPositionObj->getIsEastRail() && currentPositionObj->getStation() == nullptr);
         }
         else {
             std::cerr << "Please enter a valid move";
         }
         break;
     case 'd':
-        if (currentPositionObj->getIsEastRail() && m_trainCoordinates[1] < m_cBoardWidth) {
-            m_trainCoordinates[1] += 1;
+        if (currentPositionObj->getIsEastRail() && (currentPositionObj->getStation() || currentTrainOrientation != 'w')) {
+            getTrain()->setOrientation('e');
+            do {
+                m_trainCoordinates[1] += 1;
+                currentTrainPosition = getTrainCoordinates();
+                currentPositionObj = getGameBoard()[currentTrainPosition.at(0) * m_cBoardWidth + currentTrainPosition.at(1)];
+            } while (currentPositionObj->getIsEastRail() && !currentPositionObj->getIsNorthRail() && !currentPositionObj->getIsSouthRail() && currentPositionObj->getStation() == nullptr);
         }
         break;
     default:

@@ -5,7 +5,7 @@
 //creates the board according to gameMap
 //adds trainstation to rail if provided
 //checks adjacent rails, where train can move to
-Board::Board(std::vector<std::string> gameMap)
+Board::Board(std::vector<std::string> gameMap, std::vector<std::string> stationNames)
 {
     bool isFirst{ true };
     for (int row = 0; row < m_cBoardHeight; row++)
@@ -49,7 +49,14 @@ Board::Board(std::vector<std::string> gameMap)
                 }
                 else {
                     std::shared_ptr<Station> currentStation;
-                    currentStation=std::shared_ptr<Station>(new Station(gameMap[row][clm]));
+                    std::string currentStationName { gameMap[row][clm] };
+                    for (int it = 0; it < stationNames.size(); ++it) {
+                        if (!stationNames[it].rfind(gameMap[row][clm], 0)) {
+                            currentStationName = stationNames[it];
+                            break;
+                        }
+                    }
+                    currentStation=std::shared_ptr<Station>(new Station(gameMap[row][clm],currentStationName));
                     m_stationList.push_back(currentStation);
                     m_gameBoard[row * m_cBoardWidth + clm] = (std::shared_ptr<IGameObj>) new Rail(isNorthRail, isEastRail, isSouthRail, isWestRail, currentStation);
                 } 

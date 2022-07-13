@@ -11,7 +11,7 @@
 GameController::GameController(std::string file)
 {
 	m_gameMap = ReadGameMapFromFile(file);
-	m_board = std::shared_ptr<Board>(new Board(m_gameMap));
+	m_board = std::shared_ptr<Board>(new Board(m_gameMap, m_stationNames));
 	m_view = std::shared_ptr<View>(new View(m_board));
 	m_view->printBoard();
 }
@@ -29,6 +29,11 @@ void GameController::PlayGame()
 		m_board->moveTrain(move);
 		system("cls");
 		m_view->printBoard();
+		std::shared_ptr < IGameObj> currentPositionObj{ m_board->getGameBoard()[m_board->getTrainCoordinates().at(0) * m_board->getBoardWidth() + m_board->getTrainCoordinates().at(1)]};
+		std::shared_ptr<Station> currentStation{ currentPositionObj->getStation() };
+		if (currentStation) {
+			std::cout << "You have reached Station " << currentStation->getStationName() << '\n';
+		}
 	}
 }
 
@@ -60,10 +65,14 @@ std::vector<std::string> GameController::ReadGameMapFromFile(std::string file)
 		// Print an error and exit
 		std::cerr << "File could not be opened.\n";
 	}
-	while (str) {
-		std::string line;
+	std::string line;
+	while (str && line != "-") {
 		std::getline(str, line);
 		m_gameMap.push_back(line);
+	}
+	while (str) {			
+		std::getline(str, line);
+		m_stationNames.push_back(line);
 	}
 
 	return std::vector<std::string>(m_gameMap);

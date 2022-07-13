@@ -24,7 +24,7 @@ private:
 
 public:
 	~Board() {};
-	Board(std::vector<std::string> gameMap);
+	Board(std::vector<std::string> gameMap, std::vector<std::string> stationNames);
 
 	int getBoardHeight() { return m_cBoardHeight; }
 	int getBoardWidth() { return m_cBoardWidth; }
@@ -32,10 +32,6 @@ public:
 	std::shared_ptr<Train> getTrain() { return m_train; }
 	std::vector<std::shared_ptr<IGameObj>> getGameBoard() { return m_gameBoard; }
 	void moveTrain(char move);
-	// getStationsLeftToVisit
-	//getTrainCoordinates
-	//getTrain
-	//hasWon
 };
 
 #endif

@@ -16,3 +16,16 @@
     J         #      
     ###K##### #      
             ##L      
+-
+A Hamburg
+B Berlin
+C Hannover
+D Dortmund
+E Leipzig
+F Dresden
+G Köln
+H Frankfurt (Main)
+I Nürnberg
+J Karlsruhe
+K Stuttgart
+L München
